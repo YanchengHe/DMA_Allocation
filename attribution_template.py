@@ -138,11 +138,8 @@ channel_spend = pd.read_pickle('channel_spend_student_data')
 
 # Only calculate the customers who converted with random sampling
 # The first line could be changed into False to calculate the whole sample
-<<<<<<< HEAD
-if True:
-=======
+
 if False:
->>>>>>> Initial commit
     df = df[df['convert_TF'] == True]
     df = df.sample(frac=0.1, random_state=None, axis=0, replace=False)
 
@@ -191,10 +188,8 @@ for model_type in select_model_types:
     # --- Average CAC ---
     channel_allocation = get_attribution_by_channel(df, credit_col_postpend_f='_credit')
     df_CAC = calc_avg_CAC(channel_allocation_f=channel_allocation, channel_spend_f=channel_spend['total'])
-<<<<<<< HEAD
-=======
     # We can print df_CAC to get the average CAC for five approaches
->>>>>>> Initial commit
+
 
     # --- Marginal CAC ---
     credit_cols = [x for x in df.columns if x.find('credit') > -1]
